@@ -1,0 +1,66 @@
+# NAME: MT-Ads
+# 美团 App 净化（分流部分）
+# 原作者：TG@ZenMoFiShi（https://github.com/ZenmoFeiShi/Qx）
+# 原文件：https://raw.githubusercontent.com/ZenmoFeiShi/Qx/refs/heads/main/MT.snippet
+#
+# 本文件是原 snippet 里的 host / ip-cidr 规则，已转为 QX 分流语法。
+# 配套文件：MT.conf（重写规则）、MT.js（脚本），三个都要传。
+#
+# QX 用法：分流 → 引用 → + → 粘贴下面的地址
+#   https://cdn.jsdelivr.net/gh/zzxyscc6699/cainiao-moyu@master/MT.list
+#
+# 说明：IP-CIDR 规则不要加 no-resolve，QX 会静默丢弃带该参数的条目。
+
+# ---------- 广告域名 ----------
+HOST,shark-mt.meituan.com,REJECT
+HOST,shark-default.meituan.com,REJECT
+HOST,shark-dp.meituan.com,REJECT
+HOST,shark-ps.meituan.com,REJECT
+HOST,shark-wm.sankuai.com,REJECT
+HOST,shark.dianping.com,REJECT
+HOST,httpdnsmultiapi.meituan.com,REJECT
+HOST,httpdnsmultiapivip.meituan.com,REJECT
+HOST,httpdns.meituan.com,REJECT
+HOST,httpdnsvip.meituan.com,REJECT
+HOST,dnspod.meituan.httpdns.qcloud.com,REJECT
+HOST,dnspod.meituan.httpdns.start.qcloud.com,REJECT
+
+# ---------- 通配域名 ----------
+HOST-KEYWORD,mquic-,REJECT    # 原 host-wildcard mquic-*.meituan.com
+
+# ---------- HTTPDNS 服务器 IP（挡掉后 App 改用系统 DNS） ----------
+IP-CIDR,202.90.108.13/32,REJECT
+IP-CIDR,202.90.110.46/32,REJECT
+IP-CIDR,202.90.108.69/32,REJECT
+IP-CIDR,202.90.110.45/32,REJECT
+IP-CIDR,202.90.108.68/32,REJECT
+IP-CIDR,202.90.110.48/32,REJECT
+IP-CIDR,202.90.108.67/32,REJECT
+IP-CIDR,202.90.110.36/32,REJECT
+IP-CIDR,202.90.108.54/32,REJECT
+IP-CIDR,202.90.108.55/32,REJECT
+IP-CIDR,203.76.217.51/32,REJECT
+IP-CIDR,203.76.217.53/32,REJECT
+IP-CIDR,203.76.217.241/32,REJECT
+IP-CIDR,203.76.217.243/32,REJECT
+IP-CIDR,103.202.146.30/32,REJECT
+IP-CIDR,103.202.146.49/32,REJECT
+IP-CIDR,101.50.8.64/32,REJECT
+IP-CIDR,103.63.160.64/32,REJECT
+IP-CIDR,103.63.160.69/32,REJECT
+IP-CIDR,103.37.155.77/32,REJECT
+IP-CIDR,103.37.155.60/32,REJECT
+IP-CIDR,111.230.0.200/32,REJECT
+IP-CIDR,139.9.47.231/32,REJECT
+IP-CIDR,121.37.4.167/32,REJECT
+IP-CIDR,119.29.126.219/32,REJECT
+IP-CIDR,106.55.217.56/32,REJECT
+IP-CIDR,103.37.152.224/32,REJECT
+IP-CIDR,119.29.48.215/32,REJECT
+IP-CIDR,42.193.128.160/32,REJECT
+
+# ---------- HTTPDNS 服务器 IPv6 ----------
+IP6-CIDR,2405:1480:3000:303b::303b/128,REJECT
+IP6-CIDR,2405:1480:1000:3::1e/128,REJECT
+IP6-CIDR,2405:1480:1000:4::15/128,REJECT
+IP6-CIDR,2402:4e00:40:40::2:373/128,REJECT
