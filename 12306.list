@@ -1,0 +1,7 @@
+# NAME: 12306-List
+# 12306 去广告 分流规则
+# QX：分流 → 引用 → + → https://cdn.jsdelivr.net/gh/zzxyscc6699/cainiao-moyu@master/12306.list
+
+HOST,ad.12306.cn,DIRECT
+
+# 说明：ad.12306.cn 直连，避免走代理影响 12306 正常请求
